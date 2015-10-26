@@ -8,19 +8,18 @@
  * @author Phil Crumm pcrumm@p3net.net
  */
 
-namespace phpBBJSON\Exception;
-include_once('generic.php');
+namespace phpBBJson\Exception;
 
-class BadFormat extends \phpBBJSON\Exception\GenericException
+class BadFormat extends GenericException
 {
 	/**
 	 * Generate a proper response (and include the error code in the 'error' field) and quit
 	 *
 	 * @param string $message Error message
 	 * @param int $code Error code
-	 * @param Exception $previous Previous unhandled exception
+	 * @param \Exception $previous Previous unhandled exception
 	 */
-	public function __construct($message = '', $code = 0, Exception $previous = NULL)
+	public function __construct($message = '', $code = 0, \Exception $previous = NULL)
 	{
 		$this->generate_response(HTTP_BAD_FORMAT, $message);
 	}
