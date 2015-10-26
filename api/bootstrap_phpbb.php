@@ -5,9 +5,6 @@
  * @author Phil Crumm pcrumm@p3net.net
  */
 
-/**
- */
-
 define('IN_PHPBB', true);
 
 // Setup the variables we need to include phpBB the proper way
@@ -21,7 +18,7 @@ if (file_exists($phpbb_root_path . 'common.' . $phpEx))
 }
 else
 {
-	throw new \phpBBJSON\Exception\InternalError('Common file not found');
+	throw new \phpBBJson\Exception\InternalError('Common file not found');
 }
 
 // And the DBAL
@@ -31,12 +28,11 @@ else
 }
 else
 {
-	throw new \phpBBJSON\Exception\InternalError('Config file not properly formatted');
+	throw new \phpBBJson\Exception\InternalError('Config file not properly formatted');
 }*/
 
 // Setup our phpBB "container"
-include(INCLUDES_DIR . 'phpbb.' . $phpEx);
-$phpbb = new phpBBJSON\phpbb();
+$phpbb = new phpBBJson\phpBB();
 
 // Setup the dbal
 $dbal_driver = 'dbal_' . $dbms;
@@ -47,6 +43,7 @@ $phpbb->set_user($user);
 $phpbb->set_auth($auth);
 $phpbb->set_db($db);
 $phpbb->set_config($config);
+$phpbb->set_container($phpbb_container);
 
 // Table names
 define('API_SECRET',                            $table_prefix . 'api_secret');

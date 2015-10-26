@@ -8,8 +8,8 @@
  * @author Phil Crumm pcrumm@p3net.net
  */
 
-namespace phpBBJSON\Exception;
-include_once(INCLUDES_DIR . 'response.php');
+namespace phpBBJson\Exception;
+
 class GenericException extends \Exception
 {
 	/**
@@ -20,7 +20,7 @@ class GenericException extends \Exception
 	 */
 	protected function generate_response($header, $message)
 	{
-		$response = new \phpBBJSON\Response();
+		/*$response = new \phpBBJson\Response();
 		$response->set_header(HTTP_BAD_FORMAT);
 		$response->set_data(array('error', $message));
 		
@@ -30,6 +30,6 @@ class GenericException extends \Exception
 		while (ob_get_level() > 1)
 		{
 			ob_end_clean();
-		}
+		}*/
 	}
 }

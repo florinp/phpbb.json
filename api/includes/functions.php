@@ -1,6 +1,6 @@
 <?php
 
-namespace phpBBJSON;
+namespace phpBBJson;
 
 function getIdFromSecret($secret) {
     global $phpbb;
@@ -22,7 +22,7 @@ function verifySecret($secret) {
     if($count > 0) {
         return true;
     } else {
-        throw new \phpBBJSON\Exception\InternalError("Your secret code is not valid");
+        throw new \phpBBJson\Exception\InternalError("Your secret code is not valid");
     }
 }
 

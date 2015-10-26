@@ -1,0 +1,12 @@
+{
+  "require": {
+    "slim/slim": "3.0.0-RC1",
+    "symfony/psr-http-message-bridge": "*",
+    "zendframework/zend-diactoros": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "phpBBJson\\": "includes/"
+    }
+  }
+}
